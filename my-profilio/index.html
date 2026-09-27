@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kushalm | Personal Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            background: #ffffff;
+            color: #111111;
+            line-height: 1.7;
+            overflow-x: hidden;
+            letter-spacing: 0.01em;
+            cursor: none;
+        }
+
+        header {
+            background: linear-gradient(135deg, #000000, #1f1f1f);
+            color: #ffffff;
+            text-align: center;
+            padding: 60px 20px 52px;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInDown 1s ease;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top left, rgba(255,255,255,0.12), transparent 30%);
+            animation: glow 4s ease-in-out infinite alternate;
+        }
+
+        header h1,
+        header p {
+            position: relative;
+            z-index: 1;
+        }
+
+        header h1 {
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-size: 1.05rem;
+            opacity: 0.92;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 36px auto;
+            padding: 0 20px;
+        }
+
+        .profile-image-wrapper {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-image {
+            width: 260px;
+            height: 260px;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+            border-radius: 14px;
+            border: 3px solid #f0f0f0;
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.12);
+        }
+
+        @media (max-width: 480px) {
+            .profile-image {
+                width: 220px;
+                height: 220px;
+            }
+        }
+
+        .card {
+            background: #f8f8f8;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 12px;
+            padding: 28px 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: officialReveal 0.8s ease both;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h2 {
+            color: #111111;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.12);
+            padding-bottom: 10px;
+            margin-bottom: 18px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .sports-badge {
+            display: inline-block;
+            background-color: #111111;
+            color: #ffffff;
+            padding: 7px 14px;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 0.82rem;
+            letter-spacing: 0.08em;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+        }
+
+        .hobby-list {
+            list-style-type: none;
+            margin-top: 12px;
+        }
+
+        .hobby-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .hobby-list li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: #111111;
+            font-weight: bold;
+        }
+
+        .address-box {
+            background-color: #f1f1f1;
+            border-left: 4px solid #111111;
+            padding: 18px 18px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .address-box:hover {
+            background-color: #e7e7e7;
+        }
+
+        footer {
+            text-align: center;
+            padding: 22px 20px;
+            color: #333333;
+            font-size: 0.82rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            animation: fadeIn 1.2s ease;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes glow {
+            from {
+                transform: scale(1);
+                opacity: 0.35;
+            }
+            to {
+                transform: scale(1.08);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes officialReveal {
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cursor-ball {
+            position: fixed;
+            width: 18px;
+            height: 18px;
+            background: #ffffff;
+            border: 2px solid #111111;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 18px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (pointer: coarse) {
+            body {
+                cursor: auto;
+            }
+
+            .cursor-ball {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor-ball"></div>
+    <header>
+        <h1>Hi, I'm Kushalm! 👋</h1>
+        <p>Student | Cricket Enthusiast | Learner</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- About Me Section -->
+        <div class="card">
+            <h2>About Me</h2>
+            <div class="profile-image-wrapper">
+                <img src="profile-photo.jpg" alt="Kushalm profile" class="profile-image">
+            </div>
+            <p>Welcome to my personal homepage! I am Kushalm. I am an active student who loves learning new things, participating in sports, and spending time on creative outdoor activities.</p>
+        </div>
+
+        <!-- Hobbies Section -->
+        <div class="card">
+            <h2>My Hobbies & Interests</h2>
+            
+            <span class="sports-badge">🏏 Favorite Sport: Cricket</span>
+            <p>Cricket is my biggest passion. Whether playing on the field or tracking matches, I love everything about the game—from batting and bowling to practicing strategic teamwork.</p>
+
+            <br>
+            <p><strong>Other Things I Enjoy:</strong></p>
+            <ul class="hobby-list">
+                <li>Playing outdoor sports and staying active</li>
+                <li>Gaming and interactive activities</li>
+                <li>Reading books and discovering new topics</li>
+                <li>Hanging out with friends</li>
+            </ul>
+        </div>
+
+        <!-- Address / School Section -->
+        <div class="card">
+            <h2>Address & School Location</h2>
+            <div class="address-box">
+                <p><strong>Associated Institution:</strong> Gurushree Public School / Gurushree Vidya Kendra</p>
+                <p><strong>Location:</strong> Doddabidarakallu, Nagasandra Post, Bengaluru, Karnataka - 560073</p>
+                <p><strong>School Type:</strong> A well-known educational institution focused on academic excellence, discipline, and student development.</p>
+                <p><strong>Academic Focus:</strong> Gurushree Vidya Kendra promotes quality education, character building, and holistic growth for students in a nurturing environment.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Kushalm. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,208 @@
+/* VS Code Dark+ Theme Palette */
+:root {
+    --bg-dark: #1e1e1e;
+    --sidebar-bg: #252526;
+    --activity-bar-bg: #333333;
+    --tab-active-bg: #1e1e1e;
+    --tab-inactive-bg: #2d2d2d;
+    --card-bg: #252526;
+    --card-border: #3c3c3c;
+    --text-main: #d4d4d4;
+    --text-muted: #858585;
+    --accent-blue: #569cd6;
+    --accent-green: #6a9955;
+    --accent-orange: #ce9178;
+    --accent-yellow: #dcdcaa;
+    --accent-cyan: #4ec9b0;
+    --font-mono: 'Consolas', 'Courier New', monospace;
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Top Navigation / Editor Tab Bar --- */
+.vscode-header {
+    background-color: var(--tab-inactive-bg);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--card-border);
+    user-select: none;
+}
+
+.tab {
+    background-color: var(--tab-active-bg);
+    color: var(--accent-blue);
+    padding: 10px 20px;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    border-top: 2px solid var(--accent-blue);
+    border-right: 1px solid var(--card-border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tab::before {
+    content: "🌐";
+    font-size: 0.8rem;
+}
+
+/* --- Main Layout Grid --- */
+.vscode-workspace {
+    display: flex;
+    flex: 1;
+}
+
+/* --- Sidebar Simulation --- */
+.sidebar {
+    width: 220px;
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid var(--card-border);
+    padding: 15px 0;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+}
+
+.sidebar-title {
+    color: var(--text-muted);
+    font-weight: bold;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    padding: 0 15px 10px 15px;
+    text-transform: uppercase;
+}
+
+.sidebar-item {
+    padding: 6px 20px;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.sidebar-item.active {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+}
+
+/* --- Content Container --- */
+.container {
+    flex: 1;
+    max-width: 850px;
+    padding: 30px 40px;
+}
+
+header {
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--card-border);
+    padding-bottom: 20px;
+}
+
+header h1 {
+    font-family: var(--font-mono);
+    font-size: 2.2rem;
+    color: var(--accent-yellow);
+}
+
+header h1 .comment {
+    color: var(--accent-green);
+    font-weight: normal;
+}
+
+header p {
+    color: var(--accent-orange);
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+/* --- VS Code Cards --- */
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.card h2 {
+    font-family: var(--font-mono);
+    color: var(--accent-cyan);
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    border-bottom: 1px dashed var(--card-border);
+    padding-bottom: 6px;
+}
+
+.sports-badge {
+    display: inline-block;
+    background-color: rgba(86, 156, 214, 0.15);
+    color: var(--accent-blue);
+    border: 1px solid var(--accent-blue);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-weight: bold;
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+}
+
+.hobby-list {
+    list-style-type: none;
+    font-family: var(--font-mono);
+}
+
+.hobby-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    color: var(--text-main);
+}
+
+.hobby-list li::before {
+    content: ">";
+    position: absolute;
+    left: 0;
+    color: var(--accent-yellow);
+    font-weight: bold;
+}
+
+.address-box {
+    background-color: var(--bg-dark);
+    border-left: 3px solid var(--accent-yellow);
+    padding: 12px 15px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+}
+
+.address-box strong {
+    color: var(--accent-blue);
+}
+
+/* --- Status Bar Footer --- */
+footer {
+    background-color: #007acc; /* VS Code Status Bar Blue */
+    color: white;
+    padding: 4px 15px;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
